@@ -30,7 +30,7 @@ document.getElementById(
   .map((p) => `<a href="${p[0]}">${p[1]}</a>`)
   .join(
     ""
-  )}</div><div><h4>Get in touch</h4><a class="ico" href="https://wa.me/917745038820" target="_blank" rel="noopener">${ic.wa}+91 77450 38820</a><a class="ico" href="mailto:nishantdandwate000@gmail.com">${ic.mail}nishantdandwate000@gmail.com</a><a class="ico" href="https://instagram.com/rhythmic_nish" target="_blank" rel="noopener">${ic.ig}@rhythmic_nish</a></div><div class="copy">© 2026 Rhythmicals Drum Circle. All rights reserved.</div></div>`;
+  )}</div><div><h4>Get in touch</h4><a class="ico" href="https://wa.me/917745038820" target="_blank" rel="noopener">${ic.wa}+91 77450 38820</a><a class="ico" href="mailto:nishantdandwate000@gmail.com">${ic.mail}nishantdandwate000@gmail.com</a><a class="ico" href="https://instagram.com/rhythmicalsdrumcircle" target="_blank" rel="noopener">${ic.ig}@rhythmicalsdrumcircle</a><a class="ico" href="https://instagram.com/rhythmic_nish" target="_blank" rel="noopener">${ic.ig}@rhythmic_nish</a></div><div class="copy">© 2026 Rhythmicals Drum Circle. All rights reserved.</div></div>`;
 document.querySelectorAll(".photo img").forEach((i) => {
   const hide = () => (i.style.display = "none");
   i.addEventListener("error", hide);
