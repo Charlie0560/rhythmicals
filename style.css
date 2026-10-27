@@ -419,3 +419,9 @@ button.btn[disabled] {
     display: none;
   }
 }
+
+.ico{display:flex;align-items:center;gap:10px;overflow-wrap:anywhere}
+.ico svg{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.list .ico{margin:14px 0;font-weight:600;text-decoration:none}
+.list .ico svg{width:24px;height:24px;color:var(--rose)}
+.list .ico:hover{color:var(--rose)}
