@@ -425,3 +425,25 @@ button.btn[disabled] {
 .list .ico{margin:14px 0;font-weight:600;text-decoration:none}
 .list .ico svg{width:24px;height:24px;color:var(--rose)}
 .list .ico:hover{color:var(--rose)}
+
+.photo video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.05);
+}
+
+.vsec { background: #fff; }
+.vsec .wrap { text-align: center; }
+.vsec .sub { margin: 0 auto; }
+.vgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 300px));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.vgrid .photo { border-radius: 20px; }
