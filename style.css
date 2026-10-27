@@ -415,4 +415,7 @@ button.btn[disabled] {
     line-height: 1.2;
     font-size: 0.82rem;
   }
+  .drum {
+    display: none;
+  }
 }
