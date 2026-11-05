@@ -18,6 +18,72 @@
       name="description"
       content="Interactive drum circles for corporate events, team building, private parties and family gatherings. No experience needed."
     />
+    <style>
+      /* Testimonial reels: styles for this section live here, so no change to style.css is needed */
+      .tsec {
+        background: var(--plum);
+        color: #fff;
+      }
+      .tsec h2 {
+        color: #fff;
+        margin: 0;
+      }
+      .rhead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+      .rnav {
+        display: flex;
+        gap: 10px;
+      }
+      .rnav button {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: none;
+        color: var(--gold);
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .rnav button:hover {
+        background: var(--gold);
+        color: var(--plum);
+      }
+      .reels {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 14px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold) transparent;
+        -webkit-overflow-scrolling: touch;
+      }
+      .reel {
+        flex: 0 0 min(270px, 72vw);
+        scroll-snap-align: start;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #000;
+      }
+      .reel video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+        background: #000;
+      }
+      @media (max-width: 560px) {
+        .rnav {
+          display: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <header id="hdr"></header>
@@ -88,7 +154,7 @@
           <div class="card">
             <div class="photo">
               <img
-                src="images/social.jpg"
+                src="images/social2.jpg"
                 alt="Drum circle set-up on a lit garden lawn at night"
                 style="object-position: 50% 55%"
               />
@@ -104,6 +170,66 @@
         </div>
       </div>
     </section>
+
+    <!-- TESTIMONIAL REELS: side by side, scroll sideways, tap to play with sound -->
+    <section class="tsec">
+      <div class="wrap">
+        <div class="rhead">
+          <h2>What our clients say</h2>
+          <div class="rnav">
+            <button type="button" data-dir="-1" aria-label="Previous videos">
+              ‹
+            </button>
+            <button type="button" data-dir="1" aria-label="Next videos">
+              ›
+            </button>
+          </div>
+        </div>
+        <div class="reels" id="reels">
+          <div class="reel">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Client testimonial 1"
+            >
+              <source src="videos/testimonial-1.mp4#t=0.1" type="video/mp4" />
+            </video>
+          </div>
+          <div class="reel">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Client testimonial 2"
+            >
+              <source src="videos/testimonial-2.mp4#t=0.1" type="video/mp4" />
+            </video>
+          </div>
+          <div class="reel">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Client testimonial 3"
+            >
+              <source src="videos/testimonial-3.mp4#t=0.1" type="video/mp4" />
+            </video>
+          </div>
+          <div class="reel">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              aria-label="Client testimonial 4"
+            >
+              <source src="videos/testimonial-4.mp4#t=0.1" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="band">
       <div class="wrap">
         <h2>Ready to feel the beat?</h2>
@@ -115,5 +241,23 @@
     </section>
     <footer id="ftr"></footer>
     <script src="script.js"></script>
+    <script>
+      // Only one testimonial plays at a time
+      const rv = document.querySelectorAll(".reel video");
+      rv.forEach((v) =>
+        v.addEventListener("play", () =>
+          rv.forEach((o) => o !== v && o.pause())
+        )
+      );
+      // Arrow buttons scroll the row by one video
+      const row = document.getElementById("reels");
+      document
+        .querySelectorAll(".rnav button")
+        .forEach((b) =>
+          b.addEventListener("click", () =>
+            row.scrollBy({ left: b.dataset.dir * 290, behavior: "smooth" })
+          )
+        );
+    </script>
   </body>
 </html>
